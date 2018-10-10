@@ -36,7 +36,7 @@ public class Zero implements Nat{
 	 */
 	@Override
 	public Nat creerSuccesseur(Nat predecesseur) {
-		return this.creerNatAvecValeur(predecesseur.val() + 1);
+		return this.un();
 	}
 
 	/*
