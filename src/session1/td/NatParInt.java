@@ -1,128 +1,109 @@
 package session1.td;
 
-public class NatParInt implements Nat{
+import session1.td.Nat;
+
+public class NatParInt implements Nat {
 	
-	
-	  
-	 
-	static final FabriqueNat<Nat> FAB = new NatParInt(0);
+	public static FabriqueNaturels<Nat> FAB = new NatParInt(0);
 	
 	private int val;
 
-	 
-	public NatParInt(int val) {
-		if(val<0) 
-			throw new IllegalArgumentException("This integer is not a natural integer");
-		else
-			this.val =val;
-	}
-	
-	  
-	 
-	public int val() {
-		return this.val;
-	}
-	  
-	 
-	@Override
-	public Nat creerNatAvecValeur(int v) {
-		return new NatParInt(v);
+	public NatParInt(int val){
+		if(val < 0)
+			throw new IllegalArgumentException("Pas de Nat à patir d'un int négatif.");
+		this.val = val;
 	}
 
-	
+	@Override
+	public Nat creerNatAvecValeur(int val) {
+		return new NatParInt(val);
+	}
 	@Override
 	public Nat creerZero() {
 		return this.creerNatAvecValeur(0);
 	}
 
-	 
 	@Override
 	public Nat creerSuccesseur(Nat predecesseur) {
 		return this.creerNatAvecValeur(predecesseur.val() + 1);
-	} 
-	 
-	@Override
-	public Nat creerNatAvecRepresentation(String str) {
-		return this.creerNatAvecValeur(Integer.parseInt(str));
-	}
-	  
-	 
-	@Override
-	public Nat somme(Nat x) {
-		return this.creerNatAvecValeur(this.val()+x.val());
 	}
 
-	 
+	@Override
+	public Nat creerNatAvecRepresentation(String repDecimale) {
+		return this.creerNatAvecValeur(Integer.parseInt(repDecimale));
+	}
+
+	@Override
+	public int val() {
+		return this.val;
+	}
+
+	@Override
+	public boolean estNul() {
+	return this.val() == 0;
+	}
+
+	@Override
+	public Nat predecesseur() {
+		if(this.estNul())
+			throw new UnsupportedOperationException("Pas de prédécesseur.");
+		return this.creerNatAvecValeur(this.val() - 1);
+	}
+
+	@Override
+	public int chiffre(int i) {
+		return (i == 0) ? this.val()%10 : (new NatParInt(this.val()/10)).chiffre(i-1);
+	}
+
+	@Override
+	public int taille() {
+		return (this.val() < 10) ? 1 : 1 + (new NatParInt(this.val() / 10)).taille();
+	}
+	
 	@Override
 	public Nat zero() {
 		return this.creerNatAvecValeur(0);
 	}
 
-	 
 	@Override
-	public Nat produit(Nat x) {
-		return this.creerNatAvecValeur(this.val()*x.val());
+	public Nat somme(Nat x) {
+		return this.creerNatAvecValeur(this.val() + x.val());
 	}
 
-	
 	@Override
 	public Nat un() {
 		return this.creerNatAvecValeur(1);
 	}
 
 	@Override
+	public Nat produit(Nat x) {
+		return this.creerNatAvecValeur(this.val() * x.val());
+	}
+
+
+	@Override
 	public Nat modulo(Nat x) {
-		return this.creerNatAvecValeur(this.val() % x.val());
+		return this.creerNatAvecValeur(this.val()%x.val());
 	}
 
 	@Override
 	public Nat div(Nat x) {
-		return this.creerNatAvecValeur((this.val()-this.modulo(x).val())/x.val());
-	}
-
-	@Override
-	public boolean estNul() {
-		boolean t;
-		if (this.val()==0)
-			t = true;
-		else 
-			t = false; 
-		return t;
-	}
-
-	@Override
-	public Nat predecesseur() {
-		if(this.estNul()) 
-			throw new UnsupportedOperationException("This integer is null");
-		return this.creerNatAvecValeur(this.val()-1);
-	}
-
-	@Override
-	public int chiffre(int i) {
-		if (i == 0) 
-			return this.val()%10;
-		else
-			return (this.creerNatAvecValeur(this.val()/10)).chiffre(i-1);
-	}
-
-	@Override
-	public int taille() {
-		if (this.val()<10)
-			return 1;
-		else 
-			return 1+(this.creerNatAvecValeur(this.val()%10).taille());
+		return this.creerNatAvecValeur(this.val()/x.val());
 	}
 	
 	@Override
 	public String toString() {
 		return Integer.toString(this.val());
 	}
-	
-	
 	@Override
-	public boolean equals(Object x) {
-		if(!(x instanceof Nat))
+	public boolean equals(Object obj) {
+		if(!(obj instanceof Nat))
 			return false;
-		return this.val() == ((Nat)x).val();
+		Nat x = (Nat)obj;
+		return this.val() == x.val();
 	}
+
+
+	
+
 }

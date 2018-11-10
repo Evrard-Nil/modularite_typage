@@ -2,30 +2,26 @@ package session1.td;
 
 import hierarchie.SemiAnneauUnitaireEuclidien;
 
-public interface Nat extends FabriqueNat<Nat>, SemiAnneauUnitaireEuclidien<Nat> {
-
+public interface Nat extends FabriqueNaturels<Nat>, SemiAnneauUnitaireEuclidien<Nat> {
 	/*
-	 * 
+	 * Sélecteur pour la définition par récurrence.
 	 */
 	boolean estNul();
-
 	/*
-	 * Gives decomposition 
+	 * Décomposition d'un successeur.
 	 */
 	Nat predecesseur();
-
 	/*
-	 * Units in first position, decade in second, etc...
+	 * Unités en 0, dizaines en un, etc.
 	 */
-	int chiffre(int i);
-
+ 	int chiffre(int i);
 	/*
-	 * Return size of Nat
+	 * Nombre de chiffres (aucun 0 superflu en tête). 
 	 */
 	int taille();
-	
+
 	/*
-	 * Int representation
+	 * Représentation par un int.
 	 */
 	int val();
 }

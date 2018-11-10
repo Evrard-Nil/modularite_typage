@@ -1,55 +1,37 @@
-package session1.td;
+package session2.td.heritageMultiple;
 
-public class SuccRec extends Succ implements Nat {
+import session1.td.Nat;
 
-	public static FabriqueNaturels<Nat> FAB = new SuccRec(ZeroRec.FAB.creerZero());
-	
-	public SuccRec(Nat predecesseur) {
-		super(predecesseur);
-	}
-
-	@Override
-	public Nat creerZero() {
-		return new ZeroRec();
-	}
-
-	@Override
-	public Nat creerSuccesseur(Nat predecesseur) {
-		return new SuccRec(predecesseur);
-	}
-	
-	// Remplacement du code copié-collé par du code récursif
+public interface AlgebreNatRecursifSuccesseur extends Nat{
 	
 	@Override
-	public Nat somme(Nat x) {
+	public default Nat somme(Nat x) {
 		return this.creerSuccesseur(this.predecesseur().somme(x));
 	}
 
 	@Override
-	public Nat produit(Nat x) {
+	public default Nat produit(Nat x) {
 		return x.somme(this.predecesseur().produit(x));
 	}
 	
 	@Override
-	public Nat modulo(Nat x) {
+	public default Nat modulo(Nat x) {
 		Nat r = this.predecesseur().modulo(x);
 		return this.creerSuccesseur(r).equals(x) ? this.creerZero() : this.creerSuccesseur(r);
 	}
 
 	@Override
-	public Nat div(Nat x) {
+	public default Nat div(Nat x) {
 		Nat r = this.predecesseur().modulo(x);
 		Nat q = this.predecesseur().div(x);
 		return this.creerSuccesseur(r).equals(x) ? this.creerSuccesseur(q) : q;
 	}
 	
-	@Override
-	public String toString() {
+	public default String representer() {
 		return "S^" + this.val() + "(0)";
 	}
 	
-	@Override
-	public boolean equals(Object obj) {
+	public default boolean estEgal(Object obj) {
 		if(!(obj instanceof Nat))
 			return false;
 		Nat x = (Nat)obj;
@@ -57,7 +39,14 @@ public class SuccRec extends Succ implements Nat {
 			return false;
 		return this.predecesseur().equals(x.predecesseur());
 	}
-
 	
+	@Override
+	public default Nat zero() {
+		return this.creerNatAvecValeur(0);
+	}
 	
+	@Override
+	public default Nat un() {
+		return this.creerNatAvecValeur(1);
+	}
 }

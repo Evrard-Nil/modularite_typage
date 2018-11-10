@@ -2,26 +2,43 @@ package session1.td;
 
 public class Succ implements Nat {
 
-	
-	/*
-	 * Attributs predecesseur
-	 */
-	static final FabriqueNat<Nat> FAB = new Succ(Zero.FAB.creerZero());
-	
+	public static FabriqueNaturels<Nat> FAB = new Succ(Zero.FAB.creerZero());
+
 	private Nat predecesseur;
 
-	/*
-	 * Constructeur
-	 */
 	public Succ(Nat predecesseur) {
-		this.predecesseur = predecesseur;	
+		this.predecesseur = predecesseur;
 	}
-	 
-	
+
+	@Override
 	public int val() {
-		return 1+this.predecesseur.val();
+		return 1 + this.predecesseur().val();
 	}
-	
+
+	@Override
+	public boolean estNul() {
+		return false;
+	}
+
+	@Override
+	public Nat predecesseur() {
+		return this.predecesseur;
+	}
+
+	// Précondition : i >=0
+	@Override
+	public int chiffre(int i) {
+		if(i < this.taille()){
+			return Character.getNumericValue(Integer.toString(this.val()).charAt(this.taille() - 1 - i));
+		}
+		return 0;
+	}
+
+	@Override
+	public int taille() {
+		return Integer.toString(this.val()).length();
+	}
+
 	@Override
 	public Nat creerNatAvecValeur(int val) {
 		if (val == 0)
@@ -34,32 +51,36 @@ public class Succ implements Nat {
 		return new Zero();
 	}
 
+	@Override
 	public Nat creerSuccesseur(Nat predecesseur) {
-		return  new Succ(predecesseur);
-	}
-
-	
-	public Nat creerNatAvecRepresentation(String str) {
-		return this.creerNatAvecValeur(Integer.parseInt(str));
+		return new Succ(predecesseur);
 	}
 
 	@Override
-	public Nat somme(Nat x) {
-		return this.creerNatAvecValeur(this.val()+x.val());
+	public Nat creerNatAvecRepresentation(String repDecimale) {
+		return this.creerNatAvecValeur(Integer.parseInt(repDecimale));
 	}
 
-	
+	// Code copié-collé
+
+	@Override
 	public Nat zero() {
 		return this.creerNatAvecValeur(0);
 	}
 
-	public Nat produit(Nat x) {
-		return this.creerNatAvecValeur(this.val() * x.val());
+	@Override
+	public Nat somme(Nat x) {
+		return this.creerNatAvecValeur(this.val() + x.val());
 	}
 
 	@Override
 	public Nat un() {
 		return this.creerNatAvecValeur(1);
+	}
+
+	@Override
+	public Nat produit(Nat x) {
+		return this.creerNatAvecValeur(this.val() * x.val());
 	}
 
 	@Override
@@ -69,44 +90,20 @@ public class Succ implements Nat {
 
 	@Override
 	public Nat div(Nat x) {
-		return this.creerNatAvecValeur((this.val()-this.modulo(x).val())/x.val());
+		return this.creerNatAvecValeur(this.val() / x.val());
 	}
 
-	@Override
-	public boolean estNul() {
-		return false;
-	}
-
-	@Override
-	public Nat predecesseur() {
-		return this.creerNatAvecValeur(this.val()-1);
-	}
-
-	@Override
-	public int chiffre(int i) {
-		if (i == 0) 
-			return this.val()%10;
-		else
-			return (this.creerNatAvecValeur(this.val()/10)).chiffre(i-1);
-	}
-
-	@Override
-	public int taille() {
-		if (this.val()<10)
-			return 1;
-		else 
-			return 1+(this.creerNatAvecValeur(this.val()%10).taille());
-	}
 	@Override
 	public String toString() {
 		return Integer.toString(this.val());
 	}
-	
-	
+
 	@Override
-	public boolean equals(Object x) {
-		if(!(x instanceof Nat))
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Nat))
 			return false;
-		return this.val() == ((Nat)x).val();
+		Nat x = (Nat) obj;
+		return this.val() == x.val();
 	}
+
 }

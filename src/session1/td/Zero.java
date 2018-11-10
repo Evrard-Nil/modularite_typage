@@ -1,92 +1,13 @@
 package session1.td;
 
-public class Zero implements Nat{
+public class Zero implements Nat {
+
+	public static final FabriqueNaturels<Nat> FAB = new Zero();
+
 	
-	static final FabriqueNat<Nat> FAB = new Zero();
-	
-	public Zero() {
-		
-	}
-	/*
-	 * Attributs
-	 */
+	@Override
 	public int val() {
 		return 0;
-	}
-	
-
-	/*
-	 * Attributs
-	 */
-	@Override
-	public Nat creerNatAvecValeur(int v) {
-		return new NatParInt(v);
-	}
-
-	/*
-	 * Attributs
-	 */
-	@Override
-	public Nat creerZero() {
-		return this.creerNatAvecValeur(0);
-	}
-
-	/*
-	 * Attributs
-	 */
-	@Override
-	public Nat creerSuccesseur(Nat predecesseur) {
-		return this.un();
-	}
-
-	/*
-	 * Attributs
-	 */
-	@Override
-	public Nat creerNatAvecRepresentation(String str) {
-		return this.creerNatAvecValeur(Integer.parseInt(str));
-	}
-
-	/*
-	 * Attributs
-	 */
-	@Override
-	public Nat somme(Nat x) {
-		return this.creerNatAvecValeur(x.val());
-	}
-
-	/*
-	 * Attributs
-	 */
-	@Override
-	public Nat zero() {
-		return this.creerNatAvecValeur(0);
-	}
-
-	/*
-	 * Attributs
-	 */
-	@Override
-	public Nat produit(Nat x) {
-		return this.creerNatAvecValeur(0);
-	}
-
-	/*
-	 * Attributs
-	 */
-	@Override
-	public Nat un() {
-		return this.creerNatAvecValeur(1);
-	}
-
-	@Override
-	public Nat modulo(Nat x) {
-		return this.creerNatAvecValeur(0);
-	}
-
-	@Override
-	public Nat div(Nat x) {
-		return this.creerNatAvecValeur(0);
 	}
 
 	@Override
@@ -96,9 +17,7 @@ public class Zero implements Nat{
 
 	@Override
 	public Nat predecesseur() {
-		if(this.estNul()) 
-			throw new UnsupportedOperationException("This integer is null");
-		return this.creerNatAvecValeur(this.val()-1);
+		throw new UnsupportedOperationException("Pas de prédécesseur.");
 	}
 
 	@Override
@@ -112,15 +31,72 @@ public class Zero implements Nat{
 	}
 	
 	@Override
-	public String toString() {
-		return Integer.toString(this.val());
+	public Nat creerNatAvecRepresentation(String repDecimale) {
+		return this.creerNatAvecValeur(Integer.parseInt(repDecimale));
 	}
+	
+	@Override
+	public Nat creerNatAvecValeur(int val) {
+		if(val == 0)
+			return this.creerZero();
+		return this.creerSuccesseur(this.creerNatAvecValeur(val -1));
+	}
+
+	@Override
+	public Nat creerZero() {
+		return this;
+	}
+
+	@Override
+	public Nat creerSuccesseur(Nat predecesseur) {
+		return new Succ(predecesseur);
+	}
+
+	// Code copié-collé
+
+	@Override
+	public Nat zero() {
+		return this.creerNatAvecValeur(0);
+	}
+
+	@Override
+	public Nat somme(Nat x) {
+		return this.creerNatAvecValeur(this.val() + x.val());
+	}
+
+	@Override
+	public Nat un() {
+		return this.creerNatAvecValeur(1);
+	}
+
+	@Override
+	public Nat produit(Nat x) {
+		return this.creerNatAvecValeur(this.val() * x.val());
+	}
+
+
+	@Override
+	public Nat modulo(Nat x) {
+		return this.creerNatAvecValeur(this.val()%x.val());
+	}
+
+	@Override
+	public Nat div(Nat x) {
+		return this.creerNatAvecValeur(this.val()/x.val());
+	}
+
 	
 	
 	@Override
-	public boolean equals(Object x) {
-		if(!(x instanceof Nat))
-			return false;
-		return this.val() == ((Nat)x).val();
+	public String toString() {
+		return Integer.toString(this.val());
 	}
+	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof Nat))
+			return false;
+		Nat x = (Nat)obj;
+		return this.val() == x.val();
+	}
+
 }
