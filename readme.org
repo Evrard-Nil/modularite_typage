@@ -58,3 +58,11 @@ Le script "appli" doit être défini dans le fichier "package.json". Voir
 
 - démo 1 : interfaces et classes (exemple des entiers naturels)
 - td : une correction du td1
+
+
+** Session 2
+
+*** Java
+
+- td : Implémentation de l'héritage multiple ainsi que de l'aggrégation avec délégation.
+        Voir Diagramme UML
