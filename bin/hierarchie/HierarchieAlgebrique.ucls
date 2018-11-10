@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.11" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <interface id="1" language="java" name="hierarchie.SemiGroupeAdditif" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/SemiGroupeAdditif.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="1" language="java" name="hierarchie.SemiGroupeAdditif" project="cours" 
+    file="/cours/src/hierarchie/SemiGroupeAdditif.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="77" width="153" x="648" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -10,8 +10,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="2" language="java" name="hierarchie.MonoideAdditif" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/MonoideAdditif.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="2" language="java" name="hierarchie.MonoideAdditif" project="cours" 
+    file="/cours/src/hierarchie/MonoideAdditif.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="59" width="130" x="648" y="154"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -19,8 +19,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="3" language="java" name="hierarchie.GroupeAdditif" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/GroupeAdditif.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="3" language="java" name="hierarchie.GroupeAdditif" project="cours" 
+    file="/cours/src/hierarchie/GroupeAdditif.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="59" width="124" x="685" y="271"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -28,8 +28,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="4" language="java" name="hierarchie.UnifereAddition" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/UnifereAddition.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="4" language="java" name="hierarchie.UnifereAddition" project="cours" 
+    file="/cours/src/hierarchie/UnifereAddition.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="77" width="134" x="185" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -37,8 +37,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="5" language="java" name="hierarchie.SymetriqueAddition" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/SymetriqueAddition.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="5" language="java" name="hierarchie.SymetriqueAddition" project="cours" 
+    file="/cours/src/hierarchie/SymetriqueAddition.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="77" width="158" x="898" y="154"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -46,8 +46,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="6" language="java" name="hierarchie.SemiAnneau" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/SemiAnneau.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="6" language="java" name="hierarchie.SemiAnneau" project="cours" 
+    file="/cours/src/hierarchie/SemiAnneau.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="59" width="118" x="527" y="271"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -55,8 +55,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="7" language="java" name="hierarchie.Anneau" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/Anneau.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="7" language="java" name="hierarchie.Anneau" project="cours" 
+    file="/cours/src/hierarchie/Anneau.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="59" width="104" x="586" y="406"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -64,8 +64,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="8" language="java" name="hierarchie.AnneauUnitaire" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/AnneauUnitaire.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="8" language="java" name="hierarchie.AnneauUnitaire" project="cours" 
+    file="/cours/src/hierarchie/AnneauUnitaire.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="59" width="134" x="586" y="505"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -73,8 +73,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="9" language="java" name="hierarchie.SemiAnneauUnitaire" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/SemiAnneauUnitaire.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="9" language="java" name="hierarchie.SemiAnneauUnitaire" project="cours" 
+    file="/cours/src/hierarchie/SemiAnneauUnitaire.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="59" width="163" x="383" y="406"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -82,8 +82,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="10" language="java" name="hierarchie.Corps" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/Corps.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="10" language="java" name="hierarchie.Corps" project="cours" 
+    file="/cours/src/hierarchie/Corps.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="59" width="104" x="741" y="604"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -91,8 +91,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="11" language="java" name="hierarchie.GroupeMultiplicatif" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/GroupeMultiplicatif.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="11" language="java" name="hierarchie.GroupeMultiplicatif" project="cours" 
+    file="/cours/src/hierarchie/GroupeMultiplicatif.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="59" width="152" x="741" y="406"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -100,8 +100,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="12" language="java" name="hierarchie.MonoideMultiplicatif" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/MonoideMultiplicatif.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="12" language="java" name="hierarchie.MonoideMultiplicatif" project="cours" 
+    file="/cours/src/hierarchie/MonoideMultiplicatif.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="59" width="158" x="329" y="271"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -109,8 +109,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="13" language="java" name="hierarchie.SemiGroupeMultiplicatif" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/SemiGroupeMultiplicatif.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="13" language="java" name="hierarchie.SemiGroupeMultiplicatif" project="cours" 
+    file="/cours/src/hierarchie/SemiGroupeMultiplicatif.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="77" width="181" x="427" y="154"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -118,8 +118,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="14" language="java" name="hierarchie.UnifereMultiplication" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/UnifereMultiplication.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="14" language="java" name="hierarchie.UnifereMultiplication" project="cours" 
+    file="/cours/src/hierarchie/UnifereMultiplication.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="77" width="162" x="225" y="154"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -127,8 +127,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="15" language="java" name="hierarchie.SymetriqueMultiplication" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/SymetriqueMultiplication.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="15" language="java" name="hierarchie.SymetriqueMultiplication" project="cours" 
+    file="/cours/src/hierarchie/SymetriqueMultiplication.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="77" width="186" x="849" y="271"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -136,8 +136,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="16" language="java" name="hierarchie.BiUnifere" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/BiUnifere.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="16" language="java" name="hierarchie.BiUnifere" project="cours" 
+    file="/cours/src/hierarchie/BiUnifere.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="59" width="104" x="185" y="271"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -145,8 +145,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="17" language="java" name="hierarchie.BiSymetrique" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/BiSymetrique.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="17" language="java" name="hierarchie.BiSymetrique" project="cours" 
+    file="/cours/src/hierarchie/BiSymetrique.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="59" width="123" x="933" y="406"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -154,8 +154,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="18" language="java" name="hierarchie.SemiAnneauUnitaireEuclidien" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/SemiAnneauUnitaireEuclidien.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="18" language="java" name="hierarchie.SemiAnneauUnitaireEuclidien" project="cours" 
+    file="/cours/src/hierarchie/SemiAnneauUnitaireEuclidien.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="59" width="215" x="128" y="406"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -163,8 +163,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="19" language="java" name="hierarchie.Euclidien" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/Euclidien.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="19" language="java" name="hierarchie.Euclidien" project="cours" 
+    file="/cours/src/hierarchie/Euclidien.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="95" width="104" x="41" y="271"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -172,8 +172,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="20" language="java" name="hierarchie.AnneauUnitaireEuclidien" project="modulariteDev" 
-    file="/modulariteDev/src/hierarchie/AnneauUnitaireEuclidien.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="20" language="java" name="hierarchie.AnneauUnitaireEuclidien" project="cours" 
+    file="//src/hierarchie/AnneauUnitaireEuclidien.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="59" width="186" x="286" y="505"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
