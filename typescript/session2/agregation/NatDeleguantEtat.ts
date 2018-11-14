@@ -9,14 +9,10 @@ export abstract class NatDeleguantEtat implements Nat{
     abstract un(): Nat;
     abstract modulo(x: Nat): Nat;
     abstract div(x: Nat): Nat;
-    abstract creerNatValue(value: number): Nat;
-    abstract creerNatString(value: string): Nat;
-    abstract creerNatSucc(pred: Nat): Nat;
-    abstract creerNatZero(): Nat;
 
     private etat : EtatNaturelPur;
 
-    public NatDeleguantEtat(etat : EtatNaturelPur) {
+    constructor(etat : EtatNaturelPur) {
         this.etat=etat;
     }
 
@@ -40,19 +36,19 @@ export abstract class NatDeleguantEtat implements Nat{
         return this.etat.taille();
     }
 
-    creerNatAvecValeur(val : number) : Nat{
+    creerNatValue(val : number) : Nat{
         return this.creerNatAvecEtat(this.etat.creerNatValue(val));
     }
 
-    creerZero() : Nat {
+    creerNatZero() : Nat {
         return this.creerNatAvecEtat(this.etat.creerNatZero());
     }
 
-    creerSuccesseur(pred : Nat) : Nat {
+    creerNatSucc(pred : Nat) : Nat {
         return this.creerNatAvecEtat(this.etat.creerNatSucc(pred.getEtat()));
     }
 
-    creerNatAvecRepresentation(repDecimale : string) : Nat {
+    creerNatString(repDecimale : string) : Nat {
         return this.creerNatAvecEtat(this.etat.creerNatString(repDecimale));
     }
 
