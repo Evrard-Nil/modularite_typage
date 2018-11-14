@@ -5,5 +5,5 @@ import {EtatNaturelPur} from "./EtatNaturelIPur";
 
 export interface Nat extends SemiAnneauUnitaireEuclidien<Nat>, FabriqueNaturels<Nat>, EtatNaturel<Nat>{
     creerNatAvecEtat(etat : EtatNaturelPur) : Nat;
-    etat() : EtatNaturelPur;
+    getEtat() : EtatNaturelPur;
 }
