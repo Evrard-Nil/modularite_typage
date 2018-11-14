@@ -2,6 +2,7 @@ import {NatDeleguantEtat} from "./NatDeleguantEtat";
 import {EtatNaturelPur} from "./EtatNaturelIPur";
 import {Nat} from "./Nat";
 import {NatCaculantAvecDesInts} from "./NatCalculantAvecDesInts";
+import {NatCalculantRecursivement} from "./NatCalculantRecursivement";
 
 export class NatCalculantAvecDesNombresDecimaux  extends NatDeleguantEtat {
     constructor(etat : EtatNaturelPur) {
@@ -74,7 +75,7 @@ export class NatCalculantAvecDesNombresDecimaux  extends NatDeleguantEtat {
     }
 
     equals(obj : Object) : boolean {
-        if(!(obj instanceof NatCalculantAvecDesNombresDecimaux || obj instanceof NatCaculantAvecDesInts)) return false;
+        if(!(NatCalculantRecursivement.instanceOfNat(obj))) return false;
         let n = <Nat> obj;
         return this.toString() == n.toString();
     }
