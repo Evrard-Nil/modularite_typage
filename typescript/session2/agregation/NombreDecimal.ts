@@ -44,7 +44,7 @@ export class NombreDecimal extends EtatNaturelPur{
         return new NombreDecimal(repDecimalecimale);
     }
 
-    private static nettoyer(s : string) : string {
+    public static nettoyer(s : string) : string {
         let debut : number = 0;
         while((debut < s.length) && s.charAt(debut) == '0'){
             debut++;
