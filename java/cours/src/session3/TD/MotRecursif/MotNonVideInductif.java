@@ -15,7 +15,7 @@ public class MotNonVideInductif implements Mot {
 	}
 
 	@Override
-	public boolean estConcat() {
+	public boolean estCons() {
 		return true;
 	}
 
