@@ -1,4 +1,4 @@
-package session3.td;
+package session3.TD.MotRecursif;
 
 public class MotNonVideInductif implements Mot {
 	private char first;

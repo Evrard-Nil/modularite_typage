@@ -1,4 +1,4 @@
-package session3.td;
+package session3.TD.MotRecursif;
 
 public class MotConcat implements Mot{
 	private Mot gauche;

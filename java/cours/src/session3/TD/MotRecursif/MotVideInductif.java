@@ -1,4 +1,4 @@
-package session3.td;
+package session3.TD.MotRecursif;
 
 public class MotVideInductif implements Mot {
 	public static MotVideInductif VIDE = new MotVideInductif();

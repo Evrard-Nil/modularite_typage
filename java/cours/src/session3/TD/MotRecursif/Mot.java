@@ -1,4 +1,4 @@
-package session3.td;
+package session3.TD.MotRecursif;
 
 interface Mot {
 	String getValue();
