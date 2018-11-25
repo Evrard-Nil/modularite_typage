@@ -1,4 +1,5 @@
-import { Char } from "./Char";
+
+import { Char } from "../Char";
 import { Mot } from "./mot";
 
 export class MotNonVideInductif extends Mot {
@@ -6,7 +7,8 @@ export class MotNonVideInductif extends Mot {
   private first: Char;
   private suiteMot: Mot;
 
-  public MotNonVideInductif(first: Char, suite: Mot) {
+  public constructor(first: Char, suite: Mot) {
+    super();
     this.first = first;
     this.suiteMot = suite;
   }
@@ -15,7 +17,20 @@ export class MotNonVideInductif extends Mot {
     return 1 + this.suiteMot.taille();
   }
 
-  estCons(): boolean {
+  public estCons(): boolean {
     return true;
   }
+
+  public premiereLettre(): Char {
+    return this.first;
+  }
+
+  public suite(): Mot {
+    return this.suiteMot;
+  }
+
+  public getValue(): string {
+    return this.premiereLettre.toString() + this.suiteMot.getValue();
+  }
+
 }

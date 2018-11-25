@@ -1,11 +1,14 @@
-import { Char } from './Char'
+import { Char } from '../Char'
 import { MotVideInductif } from './MotVideInductif';
+import { MotNonVideInductif } from './MotNonVideInductif';
+import { MotConcat } from './MotConcat';
+
 /*
 * Mot ::= Vide | cons(char, Mot) | Concatenation(Mot, Mot)
 */
 export abstract class Mot {
 
-  abstract getValue(): String;
+  abstract getValue(): string;
   abstract taille(): number;
 
   estVide(): boolean {
@@ -47,11 +50,11 @@ export abstract class Mot {
     return MotVideInductif.VIDE;
   }
 
-  motInduct(Char n): Mot {
+  motInduct(n: Char): Mot {
     return new MotNonVideInductif(n, this);
   }
 
-  concat(Mot mot): Mot {
+  concat(mot: Mot): Mot {
     return new MotConcat(this, mot);
   }
 }

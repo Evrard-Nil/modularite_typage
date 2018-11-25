@@ -4,7 +4,9 @@ export class MotVideInductif extends Mot {
 
   public static VIDE: MotVideInductif;
 
-  private MotVideInductif() { }
+  private constructor() {
+    super();
+  }
 
   public static getInstance(): MotVideInductif {
     if (this.VIDE == null) {
@@ -13,7 +15,7 @@ export class MotVideInductif extends Mot {
     return this.VIDE;
   }
 
-  public getValue(): String {
+  public getValue(): string {
     return '';
   }
 

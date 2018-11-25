@@ -8,4 +8,8 @@ export class Char {
     }
     else throw new Error('Un charatère ne peut être de longeur supérieur à 1');
   }
+
+  public toString() {
+    return this.letter;
+  }
 }
