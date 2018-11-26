@@ -1,8 +1,9 @@
-export class Char {
+export class Char extends String {
 
   private letter: string;
 
   constructor(s: string) {
+    super();
     if (s.length <= 1) {
       this.letter = s;
     }
@@ -12,4 +13,8 @@ export class Char {
   public toString() {
     return this.letter;
   }
+
+  public done: boolean;
+  public value: Char;
+
 }

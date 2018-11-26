@@ -11,7 +11,7 @@
         "build": "npm run tsc",
         "demarrer1": "node build/session1/demo1/v1/testNaturels",
         "demarrer2": "node build/session1/demo1/v2/testNaturels",
-        "td1": "node build/session1/td/testNaturels"
+        "td1": "node build/session1/td/testNaturels",
     },
     "devDependencies": {},
     "dependencies": {}

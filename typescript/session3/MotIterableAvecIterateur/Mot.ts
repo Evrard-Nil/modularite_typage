@@ -2,8 +2,10 @@ import { Char } from "../Char";
 import { MotNonVide } from './MotNonVide';
 import { MotVide } from './MotVide';
 import { MotConcat } from './MotConcat';
+import { Iterateur } from "./Iterateur";
 
-export abstract class Mot {
+export abstract class Mot implements Iterable<Char>{
+
 
   public constructor() {
 
@@ -46,5 +48,13 @@ export abstract class Mot {
 
   estVide(): boolean {
     return this.taille() == 0;
+  }
+
+  iterateur(): Iterateur {
+    return new Iterateur(this);
+  }
+
+  [Symbol.iterator](): Iterator<Char> {
+    return this.iterateur();
   }
 }
