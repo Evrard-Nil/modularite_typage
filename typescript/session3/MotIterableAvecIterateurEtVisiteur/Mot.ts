@@ -3,6 +3,7 @@ import { MotNonVide } from './MotNonVide';
 import { MotVide } from './MotVide';
 import { MotConcat } from './MotConcat';
 import { Iterateur } from "./Iterateur";
+import { Visiteur } from "./Visiteur";
 
 export abstract class Mot implements Iterable<Char>{
   public constructor() {
@@ -56,54 +57,45 @@ export abstract class Mot implements Iterable<Char>{
   [Symbol.iterator](): Iterator<Char> {
     return this.iterateur();
   }
+  //Visiteur
 
-  acceuilRecursif(v: Visiteur<T>): <T> T {
-    if (this.estVide()) {
-      return v.casVide();
-    }
-    return v.estMotNonVide(this.element(), this.reste().acceuilRecursif());
-  }
-
-  acceuil(v: Visiteur<T>): <T> T {
+  accept<T>(v: Visiteur<T>): T {
     let r: T = v.casVide();
-    for (let x in this) {
+    let i = this.iterateur();
+    while (i.aSuivant()) {
+      let x = i.suivant();
       r = v.estMotNonVide(x, r);
     }
     return r;
   }
 
-  accueilRecursif(casVide: Supplier<T>, estMotNonVide: BiFunction<Char, T, T>): <T> T {
+  acceptInductive<T>(v: Visiteur<T>): T {
     if (this.estVide()) {
-      return casVide.get();
+      return v.casVide();
     }
-    return estMotNonVide.apply(this.element(), this.reste().accueilRecursif(casVide, estMotNonVide));
+    return v.estMotNonVide(this.element(), this.reste().acceptInductive(v));
   }
 
-  accueil(casVide: Supplier<T>, estMotNonVide: BiFunction<Char, T, T>): <T> T {
-    let r = casVide.get();
-    for (let x in this) {
-      r = estMotNonVide.apply(x, r);
-    }
-    return r;
-  }
+  //Filtres
 
-  filtrageRecursif(casVide: Supplier<T>, estMotNonVide: BiFunction<Char, Mot, T>): <T> T {
+  filtrageRecursif<T>(casVide: () => T, casMotPrecedeCaractere: (c: Char, m: Mot) => T): T {
     if (this.estVide()) {
-      return casVide.get();
+      return casVide();
     }
-    return estMotNonVide.apply(this.element(), this.reste());
+    return casMotPrecedeCaractere(this.element(), this.reste());
   }
 
-  filtrage(casVide: Supplier<T>, estMotNonVide: BiFunction<Char, Mot, Function<T, T>>): <T> T {
-    let r = casVide.get();
-    let arg = this.vide();
-    let courant = this;
+  filtrage<T>(casVide: () => T, casMotPrecedeCaractere: (c: Char, m: Mot) => (t: T) => T): T {
+    let r: T = casVide();
+    let arg: Mot = this.vide();
+    let courant: Mot = this;
     while (!courant.estVide()) {
-      let e = courant.element();
-      r = estMotNonVide.apply(e, arg).apply(r);
+      let e: Char = courant.element();
+      r = casMotPrecedeCaractere(e, arg)(r);
       arg = arg.motNonVide(e);
       courant = courant.reste();
     }
     return r;
   }
+
 }
