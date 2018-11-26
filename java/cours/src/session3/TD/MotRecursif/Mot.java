@@ -8,7 +8,7 @@ interface Mot {
 		return false;
 	}
 
-	default boolean estInductif(){
+	default boolean estCons(){
 		return false;
 	}
 
