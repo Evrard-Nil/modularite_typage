@@ -1,5 +1,3 @@
-package session3.TD.MotIterableAvecIterateurEtVisiteur;
-
 class MotConcat implements Mot {
 	private Mot gauche;
 	private Mot droit;
@@ -17,7 +15,7 @@ class MotConcat implements Mot {
 	}
 
 	@Override
-	public boolean casUnion() {
+	public boolean estConcat() {
 		return true;
 	}
 

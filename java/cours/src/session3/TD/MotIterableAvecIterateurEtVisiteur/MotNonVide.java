@@ -1,5 +1,3 @@
-package session3.TD.MotIterableAvecIterateurEtVisiteur;
-
 class MotNonVide implements Mot {
 	private char element;
 	private Mot reste;

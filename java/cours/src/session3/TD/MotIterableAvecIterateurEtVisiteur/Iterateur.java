@@ -1,5 +1,3 @@
-package session3.TD.MotIterableAvecIterateurEtVisiteur;
-
 class Iterateur implements java.util.Iterator<Character> {
 	private Mot reste;
 	private char element;
@@ -19,7 +17,7 @@ class Iterateur implements java.util.Iterator<Character> {
 				this.element = ens.element();
 				break;
 			}
-			if (ens.casUnion()) {
+			if (ens.estConcat()) {
 				if (ens.gauche().estVide()) {
 					ens = ens.droit();
 					continue;

@@ -1,5 +1,3 @@
-package session3.TD.MotIterableAvecIterateurEtVisiteur;
-
 enum MotVide implements Mot {
 	VIDE;
 
