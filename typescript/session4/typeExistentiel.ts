@@ -17,6 +17,6 @@ function representationTableau(t: TableauExistentiel<any>): string {
   });
 }
 
-var array = ["a", "b", "c"];
+let array = ["a", "b", "c"];
 // tslint:disable-next-line:no-any
 console.log(representationTableau(new TableauExistentiel<any>(array)))
